@@ -1,0 +1,54 @@
+﻿@model AppUser
+@{
+     
+     Layout = "~/Views/Shared/AppLayout.cshtml";
+}
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link href="~/additionalcss/chatcss.css" rel="stylesheet" />
+<script src="~/additionaljs/chatjs.js"></script>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Chat</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"></script>
+	</head>
+	<!--Coded With Love By Mutiullah Samim-->
+	<body>
+		<div class="container-fluid h-100">
+			<div class="row justify-content-center h-100">
+				@await Component.InvokeAsync("_MyChatPerson")
+				<div class="col-md-8 col-xl-6 chat">
+					<div class="card">
+					@if(Model!=null){
+						@await Component.InvokeAsync("_ActiveChatHeader",Model)<!--Index'ten buraya seçim yappılan kişinin model bilgileri geliyor. -->
+						@await Component.InvokeAsync("_ChatMessages",Model.Id)
+						@await Component.InvokeAsync("_SendMessage",Model.Id)
+					}
+					else{
+						@await Component.InvokeAsync("_ActiveChatHeader")
+						@await Component.InvokeAsync("_ChatMessages")
+						@await Component.InvokeAsync("_SendMessage")
+
+					}
+
+				
+					
+					
+					
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+

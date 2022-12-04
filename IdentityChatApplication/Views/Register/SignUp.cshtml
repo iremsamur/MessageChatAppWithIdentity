@@ -1,0 +1,64 @@
+﻿@model SignUpModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>RegistrationForm_v5 by Colorlib</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="~/colorlib-regform-21/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+		<!-- STYLE CSS -->
+	<link rel="stylesheet" href="~/colorlib-regform-21/css/style.css">
+	</head>
+
+	<body>
+
+		<div class="wrapper">
+			<div class="inner">
+				<form method="post">
+					<h3>Kayıt Sayfası</h3>
+			
+				
+					<div class="form-wrapper">
+						<label for="" class="label-input">Ad</label>
+						<input type="text" class="form-control" asp-for="Name">
+					</div>
+
+				<div class="form-wrapper">
+					<label for="" class="label-input">Soyad</label>
+					<input type="text" class="form-control" asp-for="Surname">
+				</div>
+				<div class="form-wrapper">
+					<label for="" class="label-input">Kullanıcı Adı</label>
+					<input type="text" class="form-control" asp-for="Username">
+				</div>
+					<div class="form-wrapper">
+						<label for="" class="label-input">Mail</label>
+						<input type="email" class="form-control" asp-for="Email">
+					</div>
+					<div class="form-wrapper">
+						<label for="" class="label-input">Phone</label>
+						<input type="tel" class="form-control" asp-for="PhoneNumber">
+					</div>
+				<div class="form-wrapper">
+					<label for="" class="label-input">Parola</label>
+					<input type="password" class="form-control" asp-for="Password">
+				</div>
+					<button style="margin-bottom:20px;margin-left:10px;">Kayıt Ol</button>
+				</form>
+				<div class="image-holder">
+				<img src="~/colorlib-regform-21/images/vl-chat-application.png" alt="">
+				</div>
+			</div>
+		</div>
+
+	<script src="~/colorlib-regform-21/js/jquery-3.3.1.min.js"></script>
+	<script src="~/colorlib-regform-21/js/main.js"></script>
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
